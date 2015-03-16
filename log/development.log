@@ -1728,3 +1728,66 @@ Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 
 
 
 Started GET "/assets/application-45cc1e0f90694d1378a7f208e2f7ed74.js?body=1" for ::1 at 2015-03-16 13:31:00 -0400
+
+
+Started GET "/" for ::1 at 2015-03-16 13:39:06 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 127ms (Views: 117.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-16 13:39:06 -0400
+
+
+Started GET "/assets/application-de322a24064a1e3b0c54e6a15c9a10b2.css?body=1" for ::1 at 2015-03-16 13:39:06 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-16 13:39:06 -0400
+
+
+Started GET "/assets/static-ba3ed63c4e2834447d6d402739fd2ebe.css?body=1" for ::1 at 2015-03-16 13:39:06 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-16 13:39:06 -0400
+
+
+Started GET "/assets/application-28c6eb79ffbc623b6e68d6abf2752f85.js?body=1" for ::1 at 2015-03-16 13:39:06 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-16 13:39:06 -0400
+
+
+Started GET "/cat-pictures" for ::1 at 2015-03-16 13:39:08 -0400
+Processing by StaticController#cats as HTML
+  Rendered static/cats.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 784ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-16 13:39:09 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2015-03-16 13:39:11 -0400
+Processing by StaticController#about as HTML
+  Rendered static/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cat-pictures" for ::1 at 2015-03-16 13:39:11 -0400
+Processing by StaticController#cats as HTML
+  Rendered static/cats.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 910ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cat-pictures" for ::1 at 2015-03-16 13:39:14 -0400
+Processing by StaticController#cats as HTML
+  Rendered static/cats.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 763ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-16 13:39:19 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 54ms (Views: 53.9ms | ActiveRecord: 0.0ms)

@@ -1701,3 +1701,30 @@ Started GET "/" for ::1 at 2015-03-16 12:51:04 -0400
 Processing by StaticController#home as HTML
   Rendered static/home.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 47ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-16 13:31:00 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 111ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-16 13:31:00 -0400
+
+
+Started GET "/assets/static-ba3ed63c4e2834447d6d402739fd2ebe.css?body=1" for ::1 at 2015-03-16 13:31:00 -0400
+
+
+Started GET "/assets/application-de322a24064a1e3b0c54e6a15c9a10b2.css?body=1" for ::1 at 2015-03-16 13:31:00 -0400
+
+
+Started GET "/assets/static-34e79a77c847698f70de32962b3f4d98.js?body=1" for ::1 at 2015-03-16 13:31:00 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-16 13:31:00 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-16 13:31:00 -0400
+
+
+Started GET "/assets/application-45cc1e0f90694d1378a7f208e2f7ed74.js?body=1" for ::1 at 2015-03-16 13:31:00 -0400

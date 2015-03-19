@@ -4,26 +4,26 @@
 */
 
 ul {
-	list-style-type: none;
-	color: white;
-	background-color: green;
-	display: block;
-	text-align: center;
+  list-style-type: none;
+  color: white;
+  background-color: green;
+  display: block;
+  text-align: center;
 }
 
 li {
-	text-decoration: none;
-	padding: 5px;
+  text-decoration: none;
+  padding: 5px;
 }
 
 a:link, a:visited {
-	color: white;
+  color: white;
 }
 
 h5 {
-	background-color: gray;
-	border-radius: 6px;
-	color: white;
-	padding: 10px;
-	display: inline-block;
+  background-color: gray;
+  border-radius: 6px;
+  color: white;
+  padding: 10px;
+  display: inline-block;
 }

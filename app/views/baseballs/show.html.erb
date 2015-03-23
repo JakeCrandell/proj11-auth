@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @baseball.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @baseball.age %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @baseball.position %>
+</p>
+
+<p>
+  <strong>Batting average:</strong>
+  <%= @baseball.batting_average %>
+</p>
+
+<p>
+  <strong>Is free agent:</strong>
+  <%= @baseball.is_free_agent %>
+</p>
+
+<%= link_to 'Edit', edit_baseball_path(@baseball) %> |
+<%= link_to 'Back', baseballs_path %>

@@ -16,7 +16,7 @@ li {
   padding: 5px;
 }
 
-a:link, a:visited {
+li a:link, li a:visited {
   color: white;
 }
 
@@ -26,4 +26,8 @@ h5 {
   color: white;
   padding: 10px;
   display: inline-block;
+}
+
+footer {
+  margin-top: 10px;
 }

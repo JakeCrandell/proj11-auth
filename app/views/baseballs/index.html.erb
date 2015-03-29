@@ -20,7 +20,7 @@
         <td><%= baseball.name %></td>
         <td><%= baseball.age %></td>
         <td><%= baseball.position %></td>
-        <td><%= baseball.batting_average %></td>
+        <td><%= format_batting_average baseball.batting_average %></td>
         <td><%= baseball.is_free_agent %></td>
         <td><%= link_to 'Show', baseball %></td>
         <td><%= link_to 'Edit', edit_baseball_path(baseball) %></td>

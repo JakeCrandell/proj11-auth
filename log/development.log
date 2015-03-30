@@ -7177,3 +7177,2318 @@ Processing by BaseballsController#index as HTML
   [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
   Rendered baseballs/index.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150330145034)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150330145034"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "jakecrandell@fake.com"], ["password_digest", "$2a$10$UQJf/SZUCa1L9u6HNcdJduqXfL1WX1/DLPe/UBorSw8L80mPwG79G"], ["created_at", "2015-03-30 15:32:45.477572"], ["updated_at", "2015-03-30 15:32:45.477572"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-03-30 11:33:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 284ms (Views: 273.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:33:35 -0400
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:33:43 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 84.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:33:56 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vaArwp4WfOr8DQlpYWzsoU4AkKpmcznyhbIimqZRlNrhDOSkpwz+ngSrSQez8JzH4vNaDC1VQQi3Jvd3WGj4Sw==", "email"=>"jakecrandell@fake.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "jakecrandell@fake.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:33:57 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 80ms (Views: 79.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:33:57 -0400
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 11:35:02 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"E39NbReXJJeJsxlkeUoZESON4OLdi/Pse2RkHbrPWvBP04ILLo2m43EVWQqr1ml3j34qRJatixZJ8LHwRPY2YQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:35:02 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 84.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:35:02 -0400
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:35:04 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 84ms (Views: 83.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:35:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KJ8M9n3O5RvqHfZ5Mo5eHRX3P4AiMzbS2AOH26Lfh210M8OQRNRnbxK7thfgEi57uQT1JmkVTijql1I2XObr/A==", "email"=>"jakecrandell@fake.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "jakecrandell@fake.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 160ms (Views: 78.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:35:16 -0400
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:35:25 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ATe7XbiF3LwHyIEkRrttyASczFblXIseW3rLmDMAycBdm3Q7gZ9eyP9uwUqUJx2uqG8G8K568+Rp7h51zTmlUQ==", "email"=>"jakecrandell@fake.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "jakecrandell@fake.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:35:25 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 83ms (Views: 82.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:35:25 -0400
+
+
+Started GET "/" for ::1 at 2015-03-30 11:35:44 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 169ms (Views: 160.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:35:45 -0400
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 11:35:48 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wvCOdarTOUdUT1soLS47hmnS+L+Bxe/PGGDMkPsZnP6eXEETk8m7M6zpG0b/skvgxSEyGcrjlzUq9Bl9BSDwbw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:35:48 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 86ms (Views: 85.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:35:48 -0400
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:35:50 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 83.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:35:56 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s8njfbeAwvwezNQG9EIScVI4M4NNnn9KLCGqDMR21I7vZSwbjppAiOZqlGgm3mIX/sv5JQa4B7AetX/hOk+4Hw==", "email"=>"jakecrandell@fake.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "jakecrandell@fake.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:35:56 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 73ms (Views: 72.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:35:56 -0400
+
+
+Started GET "/" for ::1 at 2015-03-30 11:36:06 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:36:06 -0400
+
+
+Started GET "/" for ::1 at 2015-03-30 11:38:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 170ms (Views: 161.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:38:38 -0400
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 11:38:41 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ARaaLiBVRjdiIi2AAhTwDMnQcdE3u9yKlCIgyqqXFpBdulVIGU/EQ5qEbe7QiIBqZSO7d3ydpHCmtvUnVK56AQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:38:41 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 83ms (Views: 82.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:38:42 -0400
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:38:43 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 85.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:38:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nXIvdVaj/1Ry4GHbvWYAKnJdmx/QLzfj5Rd1rs/P/ibB3uATb7l9IIpGIbVv+nBM3q5RuZsJTxnXg6BDMfaStw==", "email"=>"jakecrandell@fake.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "jakecrandell@fake.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:38:51 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 76ms (Views: 75.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:38:51 -0400
+
+
+Started GET "/" for ::1 at 2015-03-30 11:47:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 154ms (Views: 145.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:47:31 -0400
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 11:47:33 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sZRVGzCUOhsuE2/LSkwhY4AfpUN4HlRzUFo61/X5sHztOJp9CY64b9a1L6WY0FEFLOxv5TM4LIlizu86C8Dc7Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:47:33 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 80ms (Views: 79.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:47:33 -0400
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:47:35 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 87.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:47:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pI4hjEyUvlf/9wdMPZ0dF1Xfj9dEaD3FvP1db3mn6gL4Iu7qdY48IwdRRyLvAW1x+SxFcQ9ORT+OaYiCh56Gkw==", "email"=>"jakecrandell@fake.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "jakecrandell@fake.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:47:42 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 76ms (Views: 75.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:47:42 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:47:48 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  Rendered baseballs/index.html.erb within layouts/application (25.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 101ms (Views: 98.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/baseballs/new" for ::1 at 2015-03-30 11:47:49 -0400
+Processing by BaseballsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered baseballs/_form.html.erb (23.7ms)
+  Rendered baseballs/new.html.erb within layouts/application (29.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 106ms (Views: 105.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/baseballs" for ::1 at 2015-03-30 11:48:00 -0400
+Processing by BaseballsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rbglL6KlNPXQlQDpgJJgZj4HmtAwc/03PhnuCiEI2o/xFOpJm7+2gSgzQIdSDhAAkvRQdntVhc0MjTvn3zG2Hg==", "baseball"=>{"name"=>"Joe", "age"=>"23", "position"=>"CD", "batting_average"=>".189", "is_free_agent"=>"0"}, "commit"=>"Create Baseball"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "baseballs" ("name", "age", "position", "batting_average", "is_free_agent", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Joe"], ["age", 23], ["position", "CD"], ["batting_average", 0.189], ["is_free_agent", "f"], ["created_at", "2015-03-30 15:48:00.368736"], ["updated_at", "2015-03-30 15:48:00.368736"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/baseballs/12
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/baseballs/12" for ::1 at 2015-03-30 11:48:00 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBaseball Load (0.4ms)[0m  [1mSELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered baseballs/show.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 90ms (Views: 87.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:48:00 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:48:50 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.3ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 89ms (Views: 85.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/baseballs/new" for ::1 at 2015-03-30 11:48:54 -0400
+Processing by BaseballsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered baseballs/_form.html.erb (2.9ms)
+  Rendered baseballs/new.html.erb within layouts/application (3.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 82ms (Views: 80.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/baseballs" for ::1 at 2015-03-30 11:49:05 -0400
+Processing by BaseballsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8laeppydlBLrMzYIOxdIAB5yMzjzYky/dhQc2d9OuIeu+lHApYcWZhOVdmbpizhmsoH5nrhENEVEgMk0IXfUFg==", "baseball"=>{"name"=>"Dale", "age"=>"45", "position"=>"C", "batting_average"=>".098", "is_free_agent"=>"1"}, "commit"=>"Create Baseball"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "baseballs" ("name", "age", "position", "batting_average", "is_free_agent", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Dale"], ["age", 45], ["position", "C"], ["batting_average", 0.098], ["is_free_agent", "t"], ["created_at", "2015-03-30 15:49:05.356085"], ["updated_at", "2015-03-30 15:49:05.356085"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/baseballs/13
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/baseballs/13" for ::1 at 2015-03-30 11:49:05 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered baseballs/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 81ms (Views: 79.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:49:05 -0400
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 11:50:09 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QGeIxh9lZj1pcELlqoaxdQrjYM/ECV3i1kbHuYwFq2ocy0egJn/kSZHWAot4GsETphCqaY8vJRjk0hJUcjzH+w=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:50:09 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 80ms (Views: 79.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:50:09 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:11 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 81ms (Views: 79.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs/new" for ::1 at 2015-03-30 11:50:12 -0400
+Processing by BaseballsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:12 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 84ms (Views: 83.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:16 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 81ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs/9" for ::1 at 2015-03-30 11:50:17 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered baseballs/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 75ms (Views: 73.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs/9/edit" for ::1 at 2015-03-30 11:50:19 -0400
+Processing by BaseballsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:21 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs/9/edit" for ::1 at 2015-03-30 11:50:22 -0400
+Processing by BaseballsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:22 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 77ms (Views: 76.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:24 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 74ms (Views: 73.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/baseballs/13" for ::1 at 2015-03-30 11:50:30 -0400
+Processing by BaseballsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EUZGXTNX6xU7/ff8UTx6+5cr/gnKYKzIvL6LBKxVd71N6ok7Ck1pYcNbt5KDoAqdO9g0r4FG1DKOKl7pUmwbLA==", "id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:30 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 88.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:50:30 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:34 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 84ms (Views: 83.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/baseballs/13" for ::1 at 2015-03-30 11:50:36 -0400
+Processing by BaseballsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NkWddGg+53MbCwi14LFNxs76i0+vtExCJ0af+HveErBq6VISUSRlB+OtSNsyLT2gYglB6eSSNLgV0koVhed+IQ==", "id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:36 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 84.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:50:36 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:50:37 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:38 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 86.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/new" for ::1 at 2015-03-30 11:50:42 -0400
+Processing by BaseballsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:42 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 85.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:44 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/baseballs/13" for ::1 at 2015-03-30 11:50:45 -0400
+Processing by BaseballsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RlxIhpyIeXSbbUfQMCizoPVEs0J4ePsXgur9PuJOClka8IfgpZL7AGPLB77itMPGWbd55DNeg+2wfijTHHdmyA==", "id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:45 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 87ms (Views: 86.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:50:46 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:47 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 83ms (Views: 81.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/12/edit" for ::1 at 2015-03-30 11:50:48 -0400
+Processing by BaseballsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:50:48 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 79ms (Views: 78.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:50 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 80ms (Views: 79.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/11" for ::1 at 2015-03-30 11:50:51 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered baseballs/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 81ms (Views: 79.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:50:54 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 84.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:51:32 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 83ms (Views: 82.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:51:40 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tiN/3ujj+Kk7tRU4wkD3dhmsxgtOSpXVXuSHUlszY4vqj7C40fl63cMTVVYQ3IcQtV8MrQVs7S9scFK/pQoPGg==", "email"=>"jakecrandell@fake.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "jakecrandell@fake.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 73ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:51:40 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 79ms (Views: 78.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:51:40 -0400
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "fritzchr@msu.edu"], ["password_digest", "$2a$10$d4PbpwKhioWmwJV1U6qqG.qA1nKiFXX8pY/AmEhihQypZFb5FpL7G"], ["created_at", "2015-03-30 15:54:41.211437"], ["updated_at", "2015-03-30 15:54:41.211437"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-03-30 11:55:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 162ms (Views: 153.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:55:19 -0400
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 11:55:21 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Tz7Z1Go7LI/y22gam/pl2gKVX44rxNzueBic5EhwCYMTkhayUyGu+wp9KHRJZhW8rmaVKGDipBRKjEkJtkllEg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:55:21 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 83ms (Views: 82.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:55:21 -0400
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:55:23 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 92ms (Views: 91.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 11:55:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dUP0eS5XeHVqfLzG8UaTCTxWrHhTr56UGUTKZr9aGBQp7zsfF036AZLa/Kgj2uNvkKVm3hiJ5m4r0B+LQWN0hQ==", "email"=>"fritzchr@msu.edu", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fritzchr@msu.edu"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:55:42 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:55:42 -0400
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 11:56:15 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aLhgdYg3/HG+gpWAMOGdYWw4d2Bneeh5N99TqyvS2ts0FK8TsS1+BUYk1e7ife0HwMu9xixfkIMFS4ZG1eu2Sg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 11:56:15 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:56:15 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:56:16 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (16.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 100ms (Views: 96.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/baseballs/12" for ::1 at 2015-03-30 11:56:19 -0400
+Processing by BaseballsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oQAme1YDaiS15NC4X+u+oVc6gmyQas+KhHjDtElcpqP9rOkdbxnoUE1CkNaNd87H+8lIyttMt3C27BZZt2XKMg==", "id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:56:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 94ms (Views: 92.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 11:56:19 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:56:21 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 88.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs/11/edit" for ::1 at 2015-03-30 11:56:22 -0400
+Processing by BaseballsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:56:22 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 75ms (Views: 74.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:56:25 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 87.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/new" for ::1 at 2015-03-30 11:56:26 -0400
+Processing by BaseballsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/sign-in
+Filter chain halted as :only_allow_signed_in_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 11:56:26 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 84.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 11:56:28 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  Rendered baseballs/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 83.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 12:07:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 177ms (Views: 167.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 12:07:04 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 74ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 12:07:04 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:06 -0400
+Processing by BaseballsController#index as HTML
+  Rendered baseballs/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 8ms
+
+SyntaxError (/Users/jakecrandell/Desktop/TC359/project11-auth/app/views/baseballs/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/jakecrandell/Desktop/TC359/project11-auth/app/views/baseballs/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/baseballs/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/baseballs/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.4ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (48.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:07 -0400
+Processing by BaseballsController#index as HTML
+  Rendered baseballs/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/jakecrandell/Desktop/TC359/project11-auth/app/views/baseballs/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/jakecrandell/Desktop/TC359/project11-auth/app/views/baseballs/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/baseballs/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/baseballs/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.7ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (13.6ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jakecrandell/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (29.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:42 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.3ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (21.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 101ms (Views: 99.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/baseballs/9" for ::1 at 2015-03-30 12:07:46 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/show.html.erb within layouts/application (1.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 80ms (Views: 77.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:47 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/index.html.erb within layouts/application (6.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 90ms (Views: 88.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/12" for ::1 at 2015-03-30 12:07:48 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBaseball Load (0.1ms)[0m  [1mSELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/show.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:49 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 83ms (Views: 82.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/11" for ::1 at 2015-03-30 12:07:50 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/show.html.erb within layouts/application (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:51 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/index.html.erb within layouts/application (5.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 87ms (Views: 85.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/9" for ::1 at 2015-03-30 12:07:52 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mBaseball Load (0.1ms)[0m  [1mSELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/show.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 79ms (Views: 77.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:53 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (5.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/13" for ::1 at 2015-03-30 12:07:54 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/show.html.erb within layouts/application (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:07:58 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/index.html.erb within layouts/application (5.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 87ms (Views: 86.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/10" for ::1 at 2015-03-30 12:08:00 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBaseball Load (0.1ms)[0m  [1mSELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/show.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 83ms (Views: 82.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:02 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (5.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/13" for ::1 at 2015-03-30 12:08:03 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/show.html.erb within layouts/application (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:04 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/index.html.erb within layouts/application (4.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 87ms (Views: 86.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs/10" for ::1 at 2015-03-30 12:08:05 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBaseball Load (0.1ms)[0m  [1mSELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/show.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:06 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (4.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/9" for ::1 at 2015-03-30 12:08:07 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/show.html.erb within layouts/application (1.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 88ms (Views: 86.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:08 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/index.html.erb within layouts/application (5.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 87ms (Views: 85.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sign-in" for ::1 at 2015-03-30 12:08:09 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 82ms (Views: 80.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for ::1 at 2015-03-30 12:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RodSlojhr9LRVMgfJjepH+b0R0nuT23rlj0DqiEPRuwaK53wsfstpinyiHH0q9l5SgeN76VpFRGkqdZH3zYqfQ==", "email"=>"fritzchr@msu.edu", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fritzchr@msu.edu"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 12:08:19 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 88ms (Views: 86.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 12:08:19 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:21 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered baseballs/index.html.erb within layouts/application (5.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 83ms (Views: 82.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/new" for ::1 at 2015-03-30 12:08:22 -0400
+Processing by BaseballsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered baseballs/_form.html.erb (14.4ms)
+  Rendered baseballs/new.html.erb within layouts/application (15.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 100ms (Views: 98.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:24 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered baseballs/index.html.erb within layouts/application (5.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 85ms (Views: 84.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/9" for ::1 at 2015-03-30 12:08:26 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered baseballs/show.html.erb within layouts/application (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 75ms (Views: 73.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs/9/edit" for ::1 at 2015-03-30 12:08:27 -0400
+Processing by BaseballsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mBaseball Load (0.1ms)[0m  [1mSELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered baseballs/_form.html.erb (3.3ms)
+  Rendered baseballs/edit.html.erb within layouts/application (4.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 94ms (Views: 92.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:28 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered baseballs/index.html.erb within layouts/application (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 83ms (Views: 81.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/10/edit" for ::1 at 2015-03-30 12:08:32 -0400
+Processing by BaseballsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered baseballs/_form.html.erb (3.4ms)
+  Rendered baseballs/edit.html.erb within layouts/application (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 90ms (Views: 88.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:34 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered baseballs/index.html.erb within layouts/application (5.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 85ms (Views: 83.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/baseballs/12" for ::1 at 2015-03-30 12:08:38 -0400
+Processing by BaseballsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"d6GJ/odaX+lbbru5WRyHYj4TsnsQuznDcHWeKhm+U1krDUaYvkDdnaPI+9eLgPcEkuB43VudQTlC4UvH54c/yA==", "id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mBaseball Load (0.1ms)[0m  [1mSELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "baseballs" WHERE "baseballs"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/baseballs
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:38 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.3ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered baseballs/index.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 86ms (Views: 85.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 12:08:38 -0400
+
+
+Started GET "/baseballs/new" for ::1 at 2015-03-30 12:08:41 -0400
+Processing by BaseballsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered baseballs/_form.html.erb (2.8ms)
+  Rendered baseballs/new.html.erb within layouts/application (3.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:42 -0400
+Processing by BaseballsController#index as HTML
+  [1m[35mBaseball Load (0.2ms)[0m  SELECT "baseballs".* FROM "baseballs"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered baseballs/index.html.erb within layouts/application (4.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 86ms (Views: 84.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sign-out" for ::1 at 2015-03-30 12:08:44 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TtDddmtwWRkA02xXXA1iE7oQj0JogVXRNRIzEwuvlfkSfBIQUmrbbfh1LDmOkRJ1FuNF5COnLSsHhub+9Zb5aA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-30 12:08:44 -0400
+Processing by StaticController#home as HTML
+  Rendered static/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/baseballs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/scaffolds-a13454069a7719828230646d1a3a1097.css?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/session-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/application-5ab0c54fcbf98a8714a48f398f2404a4.css?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/static-086d8c0acd80f7cc37b5fa42317739e0.css?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/baseballs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/static-0bb72562c1898739376d9df6a7c7a08c.js?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/session-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/assets/application-a8ea11a9906679dc4591e3e6de25c488.js?body=1" for ::1 at 2015-03-30 12:08:44 -0400
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:47 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (4.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 87ms (Views: 85.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/11" for ::1 at 2015-03-30 12:08:49 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/show.html.erb within layouts/application (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 90ms (Views: 88.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:50 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/baseballs/10" for ::1 at 2015-03-30 12:08:51 -0400
+Processing by BaseballsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mBaseball Load (0.1ms)[0m  SELECT  "baseballs".* FROM "baseballs" WHERE "baseballs"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered baseballs/show.html.erb within layouts/application (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/baseballs" for ::1 at 2015-03-30 12:08:52 -0400
+Processing by BaseballsController#index as HTML
+  [1m[36mBaseball Load (0.2ms)[0m  [1mSELECT "baseballs".* FROM "baseballs"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered baseballs/index.html.erb within layouts/application (4.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 78ms (Views: 76.9ms | ActiveRecord: 0.4ms)

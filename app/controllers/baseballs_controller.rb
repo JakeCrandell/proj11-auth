@@ -1,4 +1,5 @@
 class BaseballsController < ApplicationController
+  before_action :only_allow_signed_in_users, except: [:index, :show]
   before_action :set_baseball, only: [:show, :edit, :update, :destroy]
 
   # GET /baseballs
@@ -28,7 +29,7 @@ class BaseballsController < ApplicationController
 
     respond_to do |format|
       if @baseball.save
-        format.html { redirect_to @baseball, notice: 'Baseball was successfully created.' }
+        format.html { redirect_to @baseball, notice: 'Player was successfully created.' }
         format.json { render :show, status: :created, location: @baseball }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class BaseballsController < ApplicationController
   def update
     respond_to do |format|
       if @baseball.update(baseball_params)
-        format.html { redirect_to @baseball, notice: 'Baseball was successfully updated.' }
+        format.html { redirect_to @baseball, notice: 'Player was successfully updated.' }
         format.json { render :show, status: :ok, location: @baseball }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class BaseballsController < ApplicationController
   def destroy
     @baseball.destroy
     respond_to do |format|
-      format.html { redirect_to baseballs_url, notice: 'Baseball was successfully destroyed.' }
+      format.html { redirect_to baseballs_url, notice: 'Player was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

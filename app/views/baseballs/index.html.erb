@@ -23,8 +23,10 @@
         <td><%= format_batting_average baseball.batting_average %></td>
         <td><%= baseball.is_free_agent %></td>
         <td><%= link_to 'Show', baseball %></td>
-        <td><%= link_to 'Edit', edit_baseball_path(baseball) %></td>
-        <td><%= link_to 'Destroy', baseball, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_baseball_path(baseball) %></td>
+          <td><%= link_to 'Destroy', baseball, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,6 @@
 
 <br>
 
-<%= link_to 'New Baseball Player', new_baseball_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Baseball Player', new_baseball_path %>
+<% end %>

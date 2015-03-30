@@ -25,5 +25,7 @@
   <%= @baseball.is_free_agent %>
 </p>
 
-<%= link_to 'Edit', edit_baseball_path(@baseball) %> |
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_baseball_path(@baseball) %> |
+<% end %>
 <%= link_to 'Back', baseballs_path %>
